@@ -95,7 +95,7 @@ function createStationGUI (stationObj, sGui) {
     tb[0].appendChild(stationName);
     // "Open since" row
     cells[0].textContent = "Inaugurata il";
-    cells[1].textContent = stationObj.since;
+    cells[1].textContent = formatDate(stationObj.since);
     // Clone the new row and insert it into the table
     var stationSince = document.importNode(template.content, true);
     tb[0].appendChild(stationSince);
@@ -136,5 +136,14 @@ function addConnection (shiftBy, connectGui) {
     stroke: "#a293bd",
     strokeWidth: 16
   });
+}
+/*
+ * Bare simple date formatting function for displaying purposes. 
+ * It displays data according to dd/mm/yyyy e.g. February 3rd, 2014 becomes 03/02/2014
+ */
+function formatDate (dateStr) {
+  var parts = dateStr.split('-');
+  var dateObj = new Date(parts[0], parts[1]-1, parts[2]);
+  return ("00" + dateObj.getDate()).slice(-2) + "/" + ("00" + (dateObj.getMonth() + 1)).slice(-2) + "/" + dateObj.getFullYear();  
 }
 window.onload = loadMap;
