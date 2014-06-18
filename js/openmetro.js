@@ -71,10 +71,12 @@ function createStationGUI (stationObj, sGui) {
   });
   stationCircle.hover (function () {
     console.log("Clicked on: " + stationObj.name);
-    console.log("x: " + sGui.xCoord + ", y: " + sGui.yCoord + ", r: " + sGui.radius);
+    name.transform("t50,50r50t-50,0"); // translate 50, 50, rotate 50°, translate -50,0
     stationCircle.animate({r: 30}, 700, mina.easeout);
     }, function () {
+      name.attr({ textpath: pathCoords});
       stationCircle.animate({r: 18}, 700, mina.easein);
+      name.transform("");  
   });
   stationCircle.click( function () {
     var stationTable = document.getElementById("stationTable")
@@ -114,10 +116,9 @@ function createStationGUI (stationObj, sGui) {
       document.getElementById("mapPicture").parentNode.removeChild(document.getElementById("mapPicture"));
     }
     var url = "http://maps.googleapis.com/maps/api/staticmap?center=" + stationObj.lat+ "," + stationObj.lon + "&zoom=15&size=600x300&maptype=roadmap";
-    var t = document.querySelector("#stationMap");
-    // Populate the src at runtime.
-    t.content.querySelector("img").src = url;
-    var clone = document.importNode(t.content, true);
+    var template = document.querySelector("#stationMap");
+    template.content.querySelector("img").src = url; // Populate the src at runtime.
+    var clone = document.importNode(template.content, true);
     document.getElementById("pictureBox").appendChild(clone);
   });
 }
