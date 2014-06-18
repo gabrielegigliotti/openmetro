@@ -6,7 +6,7 @@ This is just a way to showcase what open data can be used for. Ideally it should
 
 Browser issues
 ==============
-It does not work on Opera and it looks a bit weird in Chrome (labels are far away from the circles representing metro stations). It looks fine on Firefox.
+It does not work on Opera and Safari (but next release, Safari 8, should implement the template tag and so it should start working fine). It looks a bit weird in Chrome (labels are far away from the circles representing metro stations). It looks fine on Firefox.
 
 Code issues
 ===========
@@ -18,8 +18,9 @@ I've provided a data directory where the raw dataset (comma separated value form
 
 Libraries
 =========
-CVS.js: https://github.com/adobe-webplatform/Snap.svg
-Snap.svg: https://github.com/gkindel/CSV-JS
+CVS.js: https://github.com/adobe-webplatform/Snap.svg This is used to get an array of objects starting from a list of raw data in comma seprated values.
+
+Snap.svg: https://github.com/gkindel/CSV-JS This is used to create a representation of the metro line and any animation effect applied on it.
 
 =========
 Gabriele Gigliotti - twitter [@ridillo](https://twitter.com/ridillo), 2014
