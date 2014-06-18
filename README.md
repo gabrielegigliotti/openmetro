@@ -18,7 +18,7 @@ I've provided a data directory where the raw dataset (comma separated value form
 
 Libraries
 =========
-CVS.js: https://github.com/adobe-webplatform/Snap.svg This is used to get an array of objects starting from a list of raw data in comma seprated values.
+CVS.js: https://github.com/adobe-webplatform/Snap.svg This is used to get an array of objects starting from a list of raw data in comma separated values.
 
 Snap.svg: https://github.com/gkindel/CSV-JS This is used to create a representation of the metro line and any animation effect applied on it.
 
